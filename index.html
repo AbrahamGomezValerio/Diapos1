@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación AGUATORIO - Parallax Vertical</title>
+    
+    <style>
+        /* [El CSS es el mismo, pero con la corrección en #slide-1] */
+        
+        /* 1. Configuración Base y 3D */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000; /* CAMBIO: Color negro para que el margin se vea */
+            color: #ecf0f1; 
+            overflow-x: hidden;
+            overflow-y: scroll;
+            perspective: 1px;
+        }
+
+        /* 2. Estilo de Cada Diapositiva (Contenedor 3D) */
+        .slide {
+            height: 100vh; 
+            transform-style: preserve-3d; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box; 
+            background-color: #ffffff; 
+            color: #333;
+            margin-bottom: 15px; /* Separación negra */
+        }
+
+        /* 3. Capas Parallax */
+        .slide-content, .slide-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-background {
+            transform: translateZ(-1px) scale(2); 
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+            background-color: transparent;
+        }
+        
+        .slide-content {
+            transform: translateZ(0); 
+            z-index: 10;
+        }
+        
+        /* 4. Estilos de Diseño y Contenido */
+        .slide-content h1 {
+            font-size: 5em;
+            color: #014d70; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .slide-content h2 {
+            font-size: 3em;
+        }
+        .slide-content p {
+            font-size: 1.5em;
+            max-width: 800px;
+        }
+
+        /* ------------------------------------------------ */
+        /* ESTILOS ESPECÍFICOS PARA DIAPOSITIVA 1 (IMAGEN) */
+        /* ------------------------------------------------ */
+        #slide-1 { 
+            background-color: transparent;
+            color: #ecf0f1;
+        }
+
+        #slide-1 .slide-background {
+            /* 🔥 CORRECCIÓN CLAVE: Usa la URL de prueba. REEMPLAZA ESTA LÍNEA con tu ruta local CORRECTA. */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/Aguatorio_logo.png'); 
+            
+            /* Si tu imagen local NO funciona, usa la URL anterior para verificar que el Parallax esté bien. */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Ajuste de estilos para el texto blanco en la slide 1 */
+        #slide-1 .slide-content h1, 
+        #slide-1 .slide-content h2, 
+        #slide-1 .slide-content p,
+        #slide-1 .slide-content li {
+            color: #ecf0f1;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        }
+        
+        #slide-1 .slide-content h1 {
+            color: #ecf0f1;
+        }
+
+        /* Estilos de Lista */
+        .slide ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .slide li {
+            margin: 10px 0;
+            text-align: left;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        /* Estilo de la viñeta para diapositivas blancas */
+        .slide:not(#slide-1) li:before {
+            content: "•";
+            color: #2980b9;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        /* ------------------------------------------------ */
+        /* ESTILOS DE DISEÑO PARA SLIDES 2, 3, 4, 5 (BLANCAS) */
+        /* ------------------------------------------------ */
+        #slide-2, #slide-3, #slide-4, #slide-5 { 
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        #slide-2 .slide-content h2, 
+        #slide-3 .slide-content h2,
+        #slide-4 .slide-content h2,
+        #slide-5 .slide-content h2 {
+            color: #2c3e50;
+        }
+        
+        #slide-2 .slide-content p, 
+        #slide-3 .slide-content p,
+        #slide-4 .slide-content p,
+        #slide-5 .slide-content p {
+            color: #555;
+        }
+
+        /* Estilo específico para el H1 en diapositivas con fondo blanco */
+        .slide:not(#slide-1) .slide-content h1 {
+            color: #2c3e50;
+            text-shadow: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <section class="slide" id="slide-1">
+        <div class="slide-background"></div>
+        <div class="slide-content">
+            <h1>AGUATORIO</h1>
+            <h2>Proyecto de Desarrollo de aplicaciones hibridas</h2>
+            <p style="font-size: 2em;">Integrantes:</p>
+            <ul style="font-size: 1.5em;">
+                <li>Gómez Valerio Abraham Alejandro</li>
+                <li>Magaña Melchi Henrry de Jesús</li>
+                <li>López Huerta Andrés</li>
+                <li>Molina Martinez Uriel Yair</li>
+                <li>López Ciau Carlos David</li>
+                <li>Olivera Che Jimena Beatriz</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-2">
+        <div class="slide-background"></div>
+        <div class="slide-content">
+            <h1>¿Qué es Aguatorio?</h1>
+            <p>Aguatorio® es una aplicación móvil que te ayuda a recordar cuando necesites tomar agua. Está creada para tratar de adaptarse a tu tipo de clima, condiciones de salud, actividad física, etc…</p>
+            <p>Es importante ya que tratamos de fomentar el consumo del agua y mejorar la salud de las personas que la utilicen para minimizar el consumo de refrescos y mantenerte hidratado en el día a día.</p>
+            <img src="./img/tomarawa.jpg" alt="Persona tomando agua" width="700" height="300">
+        </div>
+    </section>
+
+    <section class="slide" id="slide-3">
+        <div class="slide-background"></div>
+        <div class="slide-content">
+            <h1>¿Qué problema resuelve?</h1>
+            <p>Ayuda a la hidratación diaria de las personas cuyas condiciones se les dificulta recordar mantenerse hidratado, así como también fomentar el consumo de agua.</p>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-4">
+        <div class="slide-background"></div>
+        <div class="slide-content">
+            <h1>Propósito</h1>
+            <p>La aplicación será una aplicación la cual te ayuda recordándote cada cuánto tiempo debes hidratarte en base a unos parámetros establecidos con anterioridad.</p>
+        </div>
+    </section>
+    
+    <section class="slide" id="slide-5">
+        <div class="slide-background"></div>
+        <div class="slide-content">
+            <h1>¿Qué se busca lograr?</h1>
+            <p>Mejorar la calidad de vida de las personas así como ayudar a consumir mayor cantidad de agua y mejorar la salud de las personas.</p>
+        </div>
+    </section>
+
+
+    <script>
+        // Si más adelante añades elementos parallax con el script, este es el lugar.
+    </script>
+
+</body>
+</html>
